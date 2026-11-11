@@ -1,0 +1,64 @@
+/* Colok — wayfinding signage. Black sign boards, sign yellow as the only accent, a grey map.
+   Colour never carries status on its own: pin shape and words always do. */
+:root {
+  /* Sign board (dark surfaces) */
+  --ink: #111111;
+  --ink-2: #1d1d1d;
+  --ink-3: #2a2a2a;
+  --ink-line: #3a3a37; /* decorative rules on black */
+  --ink-edge: #8e8e88; /* control borders on black, 5.1:1 */
+  --on-ink: #ffffff;
+  --on-ink-muted: #b5b5ae; /* 8.2:1 on --ink-2 */
+
+  /* The one accent */
+  --yellow: #ffc400; /* 11.8:1 against --ink */
+  --yellow-hover: #ffd23d;
+  --yellow-press: #e6b000;
+
+  /* Light surfaces */
+  --concrete: #ecece7;
+  --plate: #ffffff;
+  --text: #111111;
+  --text-muted: #54544e; /* 6.4:1 on concrete, 7.6:1 on white */
+  --edge: #6b6b65; /* control borders on light, 5.4:1 */
+  --line: #d3d3cc;
+
+  /* Pins */
+  --pin-stale: #6b6b65;
+  --pin-stale-fill: #e4e4de;
+  --pin-gone-fill: #c9c9c3;
+
+  /* Type: Overpass descends from Highway Gothic, the lettering of road signs. */
+  --font: 'Overpass Variable', 'Overpass', system-ui, -apple-system, 'Segoe UI', sans-serif;
+  --mono: 'Overpass Mono Variable', ui-monospace, 'Cascadia Mono', Menlo, monospace;
+
+  --fs-xs: 0.75rem;
+  --fs-sm: 0.875rem;
+  --fs-md: 1rem;
+  --fs-lg: 1.25rem;
+  --fs-xl: clamp(1.5rem, 1.2rem + 1.4vw, 2rem);
+  --fs-xxl: clamp(1.875rem, 1.4rem + 2.4vw, 2.75rem);
+
+  --s-1: 4px;
+  --s-2: 8px;
+  --s-3: 12px;
+  --s-4: 16px;
+  --s-5: 24px;
+  --s-6: 32px;
+  --s-7: 48px;
+
+  --r-sm: 3px;
+  --r-md: 6px;
+  --r-lg: 10px;
+
+  --topbar-h: 56px;
+  --tap: 44px;
+  --panel-w: 400px;
+
+  --ease: cubic-bezier(0.2, 0.7, 0.2, 1);
+  --t-fast: 120ms;
+  --t-med: 220ms;
+
+  /* Focus ring colour; dark surfaces switch it to yellow. */
+  --focus: var(--ink);
+}

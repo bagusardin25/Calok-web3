@@ -1,0 +1,480 @@
+/* ───────────── Content pages (list, mappers, my spots, about) ───────────── */
+
+.page {
+  display: grid;
+  align-content: start;
+  gap: var(--s-6);
+  width: 100%;
+  max-width: 960px;
+  min-height: calc(100vh - var(--topbar-h) - 220px);
+  margin: 0 auto;
+  padding: var(--s-6) var(--s-4) var(--s-7);
+}
+
+.page:focus {
+  outline: none;
+}
+
+.page-head {
+  display: grid;
+  gap: var(--s-3);
+  padding-bottom: var(--s-5);
+  border-bottom: 4px solid var(--ink);
+}
+
+.page-head h1 {
+  font-size: var(--fs-xxl);
+  max-width: 22ch;
+}
+
+.page-head__lead {
+  max-width: 62ch;
+  color: var(--text-muted);
+  font-size: 1.0625rem;
+}
+
+.page-head__lead a {
+  color: var(--text);
+}
+
+.page-head__actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--s-2);
+  margin-top: var(--s-2);
+}
+
+.hint {
+  font-size: var(--fs-sm);
+  color: var(--text-muted);
+}
+
+.hint--warn {
+  color: var(--text);
+  font-weight: 700;
+}
+
+.hint--warn::before {
+  content: '! ';
+  font-weight: 900;
+}
+
+.list-section {
+  display: grid;
+  gap: var(--s-4);
+}
+
+.list-section h2 {
+  font-size: var(--fs-lg);
+}
+
+.list-section__head {
+  display: grid;
+  gap: var(--s-1);
+}
+
+.list-count {
+  font-size: var(--fs-sm);
+  font-weight: 700;
+}
+
+.filters--page .chip {
+  background: var(--plate);
+}
+
+.filters--page .chip.is-on {
+  background: var(--ink);
+}
+
+.filters--page .filters__scroll {
+  flex-wrap: wrap;
+  overflow: visible;
+}
+
+/* Mappers board */
+
+.table-wrap {
+  overflow-x: auto;
+  border: 2px solid var(--ink);
+  background: var(--plate);
+}
+
+.board {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: var(--fs-sm);
+}
+
+.board th {
+  background: var(--ink);
+  color: var(--on-ink);
+  font-size: var(--fs-xs);
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  text-align: left;
+  padding: var(--s-3);
+  white-space: nowrap;
+}
+
+.board td {
+  padding: var(--s-3);
+  border-top: 1px solid var(--line);
+  white-space: nowrap;
+}
+
+.board .num {
+  text-align: right;
+}
+
+.board tr.is-you td {
+  background: #fff8db;
+}
+
+.board tr.is-you td:first-child {
+  box-shadow: inset 6px 0 0 var(--yellow);
+}
+
+.you-tag {
+  display: inline-block;
+  margin-left: var(--s-2);
+  padding: 0 6px;
+  background: var(--ink);
+  color: var(--yellow);
+  font-size: 0.6875rem;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  border-radius: var(--r-sm);
+}
+
+/* My spots */
+
+.mine-list {
+  display: grid;
+  gap: var(--s-2);
+}
+
+.mine-row {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: var(--s-1) var(--s-3);
+  align-items: center;
+  padding: var(--s-3) var(--s-4);
+  background: var(--plate);
+  border: 2px solid var(--line);
+  border-radius: var(--r-sm);
+  text-decoration: none;
+}
+
+.mine-row:hover {
+  border-color: var(--ink);
+}
+
+.mine-row__name {
+  font-weight: 800;
+  overflow-wrap: anywhere;
+}
+
+.mine-row__meta {
+  grid-column: 1 / -1;
+  font-size: var(--fs-sm);
+  color: var(--text-muted);
+}
+
+/* About */
+
+.page--prose section {
+  display: grid;
+  gap: var(--s-3);
+  max-width: 68ch;
+}
+
+.page--prose h2 {
+  font-size: var(--fs-xl);
+  padding-top: var(--s-2);
+}
+
+.page--prose h3 {
+  font-size: var(--fs-lg);
+  margin-top: var(--s-3);
+}
+
+.page--prose a {
+  font-weight: 700;
+}
+
+.sign-list {
+  display: grid;
+  gap: var(--s-2);
+}
+
+.sign-list li {
+  position: relative;
+  padding-left: 22px;
+}
+
+.sign-list li::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0.45em;
+  width: 10px;
+  height: 10px;
+  background: var(--ink);
+}
+
+.status-key {
+  display: grid;
+  gap: var(--s-2);
+}
+
+.status-key li {
+  display: grid;
+  grid-template-columns: 36px 1fr;
+  gap: var(--s-3);
+  align-items: center;
+  padding: var(--s-3);
+  background: var(--plate);
+  border-radius: var(--r-sm);
+}
+
+.status-key__name {
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  font-size: var(--fs-sm);
+}
+
+/* ───────────── Forms ───────────── */
+
+.field-group {
+  display: grid;
+  gap: var(--s-2);
+}
+
+.field-group legend {
+  display: flex;
+  align-items: center;
+  gap: var(--s-2);
+  font-weight: 800;
+  font-size: var(--fs-md);
+  margin-bottom: var(--s-2);
+}
+
+.field {
+  display: grid;
+  gap: 6px;
+}
+
+.field__label {
+  display: flex;
+  align-items: center;
+  gap: var(--s-2);
+  font-weight: 800;
+}
+
+.optional {
+  font-size: var(--fs-xs);
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+}
+
+.step {
+  display: inline-grid;
+  place-items: center;
+  width: 24px;
+  height: 24px;
+  background: var(--ink);
+  color: var(--yellow);
+  font-size: var(--fs-sm);
+  font-weight: 900;
+  border-radius: 2px;
+  flex: none;
+}
+
+.input {
+  width: 100%;
+  min-height: 48px;
+  padding: 10px var(--s-3);
+  border: 2px solid var(--edge);
+  border-radius: var(--r-sm);
+  background: var(--plate);
+  color: var(--text);
+  font-size: var(--fs-md);
+}
+
+.input:hover {
+  border-color: var(--ink);
+}
+
+.input:focus-visible {
+  border-color: var(--ink);
+  outline: 3px solid var(--yellow);
+  outline-offset: 0;
+}
+
+.input[aria-invalid='true'] {
+  border-color: var(--ink);
+  border-width: 3px;
+  border-left-width: 10px;
+}
+
+textarea.input {
+  resize: vertical;
+  min-height: 88px;
+}
+
+select.input {
+  appearance: none;
+  background-image:
+    linear-gradient(45deg, transparent 50%, var(--ink) 50%),
+    linear-gradient(135deg, var(--ink) 50%, transparent 50%);
+  background-position:
+    calc(100% - 20px) 50%,
+    calc(100% - 14px) 50%;
+  background-size: 6px 6px;
+  background-repeat: no-repeat;
+  padding-right: 40px;
+}
+
+.coords {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--s-2);
+}
+
+.coords + .btn {
+  justify-self: start;
+}
+
+.counter {
+  font-size: var(--fs-xs);
+  color: var(--text-muted);
+  font-family: var(--mono);
+  justify-self: end;
+}
+
+.counter.is-over {
+  color: var(--text);
+  font-weight: 700;
+}
+
+.amenity-picks {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: var(--s-2);
+}
+
+.amenity-pick {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: var(--s-3);
+  min-height: 60px;
+  padding: var(--s-2) var(--s-3);
+  border: 2px solid var(--edge);
+  border-radius: var(--r-sm);
+  background: var(--plate);
+  cursor: pointer;
+  font-weight: 800;
+  line-height: 1.2;
+}
+
+.amenity-pick input {
+  position: absolute;
+  opacity: 0;
+  width: 1px;
+  height: 1px;
+}
+
+.amenity-pick__icon {
+  display: inline-grid;
+  place-items: center;
+  width: 40px;
+  height: 40px;
+  border-radius: var(--r-sm);
+  background: var(--ink);
+  color: var(--on-ink);
+  --pictogram-cut: var(--ink);
+  flex: none;
+}
+
+.amenity-pick:hover {
+  border-color: var(--ink);
+}
+
+.amenity-pick.is-on {
+  background: var(--ink);
+  border-color: var(--ink);
+  color: var(--on-ink);
+}
+
+.amenity-pick.is-on .amenity-pick__icon {
+  background: var(--yellow);
+  color: var(--ink);
+  --pictogram-cut: var(--yellow);
+}
+
+/* A tick in the corner, so "chosen" never depends on the fill alone. */
+.amenity-pick.is-on::after {
+  content: '✓';
+  position: absolute;
+  top: 4px;
+  right: 8px;
+  font-weight: 900;
+  color: var(--yellow);
+}
+
+.amenity-pick:focus-within {
+  outline: 3px solid var(--ink);
+  outline-offset: 2px;
+}
+
+.error-summary {
+  display: grid;
+  gap: var(--s-2);
+  padding: var(--s-4) var(--s-4) var(--s-4) calc(var(--s-4) + 12px);
+  position: relative;
+  background: var(--plate);
+  border: 3px solid var(--ink);
+}
+
+.error-summary::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: 12px;
+  background: repeating-linear-gradient(-45deg, var(--yellow) 0 6px, var(--ink) 6px 12px);
+}
+
+.error-summary p {
+  font-weight: 800;
+}
+
+.error-summary ul {
+  display: grid;
+  gap: var(--s-1);
+  list-style: square;
+  padding-left: 1.1em;
+}
+
+.error-summary a {
+  font-weight: 700;
+}
+
+.add-form .field-error {
+  color: var(--text);
+}
+
+.add-form .tx-error {
+  color: var(--text);
+}
+
+.add-form .tx-done {
+  color: var(--text);
+}
